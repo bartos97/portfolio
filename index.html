@@ -34,28 +34,42 @@
 <body>
 
   <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-md navbar-light fixed-top">
-    <a class="navbar-brand" href="index.html">
-      <img src="img/logo_small.png" alt="Bartek Zając logo">
+  <nav class="navbar navbar-expand-sm navbar-dark fixed-top sticky">
+    <a class="navbar-brand" href="#onepage-banner">
+      <img src="img/logo_small.png" alt="Bartek Zając logo" class="brand-default">
+      <img src="img/logo_small_inverse.png" alt="Bartek Zając logo" class="brand-sticked">
     </a>
 
     <button class="navbar-toggler hidden-lg-up"
             type="button"
-            data-toggle="collapse" data-target="#collapsibleNavId"
-            aria-controls="collapsibleNavId"
+            data-toggle="collapse" data-target="#collapse-main-nav"
+            aria-controls="collapse-main-nav"
             aria-expanded="false"
             aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="collapsibleNavId">
-      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+    <div class="collapse navbar-collapse" id="collapse-main-nav">
+      <ul class="navbar-nav m-auto mt-2 mt-lg-0">
+
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="#onepage-banner">
+            Start <span class="sr-only sr-active">(obecna strona)</span>
+          </a>
         </li>
+
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="#onepage-about">O mnie</a>
         </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#onepage-projects">Projekty</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#onepage-contact">Kontakt</a>
+        </li>
+
       </ul>
     </div>
   </nav>
@@ -63,12 +77,21 @@
 
 
   <!-- BANNER - PAGE HEADER -->
-  <header class="main-banner">
+  <header class="main-banner" id="onepage-banner">
     <h1>
       <div class="small">Witaj</div>
       <div class="name">Jestem Bartek</div>
       <div class="medium">Front end Developer</div>
     </h1>
+
+    <div class="icons-wrap">
+      <a href="https://github.com/bartos97" target="_blank">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/bart%C5%82omiej-zaj%C4%85c-a132b6166/" target="_blank">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </div>
   </header>
   
 
@@ -79,6 +102,7 @@
 
   <!-- Plugins -->
   <script src="js/lib/jquery-3.3.1.slim.min.js"></script>
+  <script src="js/lib/bootstrap.bundle.min.js"></script>
 
   <!-- Page scripts -->
   <script src="js/main.js"></script>

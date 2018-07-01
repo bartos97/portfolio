@@ -11,7 +11,7 @@ var wait = require('gulp-wait');
 // compiles sass into css
 gulp.task('sass', function() {
   return gulp.src('scss/main.scss')
-  .pipe(wait(100)) // becouse VS Code was making some problems with compiling on save
+  .pipe(wait(100)) // becouse VS Code was making some problems with compilation on save
   .pipe(sourcemaps.init())
   .pipe(sass({
     outputStyle: 'compressed'

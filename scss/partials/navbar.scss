@@ -1,0 +1,114 @@
+.navbar {
+  transition-duration: 0.3s;
+
+  .navbar-brand {
+    @include media-breakpoint-down(xs) {
+      padding: 0;
+    }
+
+    img {
+      max-width: $navbar-logo-size-sm;
+      @include media-breakpoint-up(sm) {
+        max-width: $navbar-logo-size;
+      }
+
+      &.brand-sticked {
+        display: none;
+        opacity: 0.8;
+        transition-duration: 0.3s;
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .navbar-toggler {
+    .navbar-toggler-icon {
+      @include media-breakpoint-down(xs) {
+        height: 1em;
+        width: 1em;
+      }
+    }
+  }
+
+  .navbar-collapse {
+    @include media-breakpoint-up(sm) {
+      margin-left: calc((-#{$navbar-logo-size} - 1rem));
+    }
+  }
+
+  .navbar-nav {
+    @include media-breakpoint-down(xs) {
+      text-align: center;
+    }
+
+    .nav-item {
+      .nav-link {
+        position: relative;
+        margin-left: $spacer;
+        margin-right: $spacer;
+        transition-duration: 0.3s;
+        
+        &:before {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          width: 0;
+          height: 2px;
+          opacity: 0.7;
+          background-color: $navbar-dark-color;
+          transition-duration: 0.3s;
+        }
+  
+        &:hover {
+          &:before {
+            left: 0;
+            width: 100%;
+          }
+        }
+      }
+
+      &.active .nav-link:before {
+        left: 0;
+        width: 100%;
+      }
+    }
+  }
+
+
+  // sticked version
+  &.sticked {
+    background-color: #fff;
+    @include mt_box_shadow(2);
+
+    .navbar-brand {
+      img {
+        &.brand-sticked {
+          display: block;
+        }
+        &.brand-default {
+          display: none;
+        }
+      }
+    }
+
+    .navbar-toggler {
+      color: $navbar-light-color;
+      border-color: $navbar-light-toggler-border-color;
+    }
+
+    .navbar-toggler-icon {
+      background-image: $navbar-light-toggler-icon-bg;
+    }
+
+    .navbar-nav .nav-link {
+      color: $gray-900;
+      &:before {
+        background-color: $black;
+      }
+    }
+  }
+
+}

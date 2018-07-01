@@ -1,21 +1,26 @@
 .main-banner {
-  background: $gray-900;
   min-height: 100vh;
+  background-color: $gray-900;
   background-image: url('../../img/banner_bg3.jpg');
   background-size: cover;
-  background-position: center top;
+  background-position: center center;
   background-repeat: no-repeat;
   color: $white;
   text-align: center;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
+  // text
   h1 {
     text-shadow: 2px 2px rgba(0,0,0,0.35);
     font-family: 'Ubuntu', sans-serif;
     line-height: 1.4;
-    font-size: 2.75rem;
+    font-size: 2rem;
+    @include media-breakpoint-up(sm) {
+      font-size: 2.75rem;      
+    }
 
     .small {
       text-transform: uppercase;
@@ -31,4 +36,40 @@
       font-size: 90%;
     }
   }
+
+
+  // icons
+  .icons-wrap {
+    $font-size: 1.5rem;
+    $padding: 0.75rem;
+    $size: $font-size + 2*$padding;
+    margin-top: $spacer-2;
+
+    a {
+      color: $white;
+      padding: $padding;
+      background-color: rgba(0,0,0,0.5);
+      display: inline-block;
+      min-width: $size;
+      min-height: $size;
+      border-radius: $size;
+      line-height: 1;
+      text-align: center;
+      box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.35);
+      transition-duration: 0.3s;
+
+      &:hover {
+        background-color: rgba(0,0,0,0.75);
+      }
+
+      &:not(:first-child) {
+        margin-left: $spacer-3;
+      }
+    }
+
+    .fab {
+      font-size: $font-size;
+    }
+  }
+
 }
