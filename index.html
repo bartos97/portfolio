@@ -35,7 +35,7 @@
 
   <!-- NAVBAR -->
   <nav class="navbar navbar-expand-sm navbar-dark fixed-top sticky">
-    <a class="navbar-brand" href="#onepage-banner">
+    <a class="navbar-brand" href="#section-banner">
       <img src="img/logo_small.png" alt="Bartek Zając logo" class="brand-default">
       <img src="img/logo_small_inverse.png" alt="Bartek Zając logo" class="brand-sticked">
     </a>
@@ -53,21 +53,21 @@
       <ul class="navbar-nav m-auto mt-2 mt-lg-0">
 
         <li class="nav-item active">
-          <a class="nav-link" href="#onepage-banner">
+          <a class="nav-link" href="#section-banner">
             Start <span class="sr-only sr-active">(obecna strona)</span>
           </a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="#onepage-about">O mnie</a>
+          <a class="nav-link" href="#section-about">O mnie</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="#onepage-projects">Projekty</a>
+          <a class="nav-link" href="#section-projects">Projekty</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="#onepage-contact">Kontakt</a>
+          <a class="nav-link" href="#section-contact">Kontakt</a>
         </li>
 
       </ul>
@@ -75,9 +75,9 @@
   </nav>
 
 
-
   <!-- BANNER - PAGE HEADER -->
-  <header class="main-banner" id="onepage-banner">
+  <header class="main-banner" id="section-banner"
+          data-parallax="scroll" data-image-src="img/banner_bg3.jpg">
     <h1>
       <div class="small">Witaj</div>
       <div class="name">Jestem Bartek</div>
@@ -93,6 +93,113 @@
       </a>
     </div>
   </header>
+
+
+  <!-- SECTION: about me -->
+  <section class="page-section" id="section-about">
+    <div class="container">
+
+      <header class="page-section-header">
+        <h2 class="page-section-title">Przedstaw się ładnie!</h2>
+        <p class="page-section-subtitle">... czyli kilka słów o tym kim jestem i co już potrafię</p>
+      </header>
+
+      <div class="row image-divider-wrap">
+
+        <div class="col-md-6 divider-column overflow-hidden">
+          <section class="inner-section enter-left">
+            <header>
+              <h4>Trochę o mnie</h4>
+            </header>
+
+            <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem excepturi iusto animi labore officiis. Quibusdam quaerat officiis aperiam, iure similique quis nam, cupiditate aut voluptates quod illo eaque, vitae aliquid corrupti ex molestias laborum? Non reprehenderit aperiam voluptates illum eaque deleniti delectus optio nesciunt blanditiis praesentium? Rem, <a href="#" class="text-link">laborum alias velit</a> amet eos possimus explicabo dolore nisi ad cumque animi, perferendis dolor atque debitis temporibus sapiente! Voluptatibus, incidunt sed non inventore ea possimus illo dolore sit eveniet alias expedita magni ullam..</p>
+            
+            <div class="contact-details-small">
+              <div class="single-info-wrap">
+                <i class="fas fa-phone" aria-hidden="true"></i>
+                <span class="sr-only">Numer telefonu kontaktowego:</span>
+                <a href="tel:+48-511-952-318" class="text-link">511 952 318</a>
+              </div>
+
+              <div class="single-info-wrap">
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+                <span class="sr-only">Kontaktowy adres e-mail:</span>
+                <a href="mailto:zajac.bartlomiej97@gmail.com" class="text-link">zajac.bartlomiej97@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="mt-4 mb-2 btns-wrap-mobile-even">
+              <a href="#" class="btn btn-primary">Pobierz CV</a>
+              <a href="#" class="btn btn-primary">Wyślij wiadomość</a>
+            </div>
+          </section>
+        </div>
+
+        <div class="image-divider">
+          <img src="img/me4.jpg" alt="Moje zdjęcie">
+        </div>
+
+        <div class="col-md-6 divider-column overflow-hidden">
+          <section class="inner-section enter-right">
+            <header>
+              <h4>Umiejętności</h4>
+            </header>
+
+            <div class="progress-wrap">
+              <label for="progres-html">HTML5 / CSS3</label>
+              <progress id="progress-html"
+                        name="progres-html"
+                        max="10"
+                        value="8">8/10
+              </progress>
+            </div>
+
+            <div class="progress-wrap">
+              <label for="progres-html">JavaScript / jQuery</label>
+              <progress id="progress-html"
+                        name="progres-html"
+                        max="10"
+                        value="6">6/10
+              </progress>
+            </div>
+
+            <div class="progress-wrap">
+              <label for="progres-html">SASS / Gulp</label>
+              <progress id="progress-html"
+                        name="progres-html"
+                        max="10"
+                        value="6">6/10
+              </progress>
+            </div>
+
+            <div class="progress-wrap">
+              <label for="progres-html">PHP / MySQL</label>
+              <progress id="progress-html"
+                        name="progres-html"
+                        max="10"
+                        value="5">5/10
+              </progress>
+            </div>
+
+            <div class="progress-wrap">
+              <label for="progres-html">Git</label>
+              <progress id="progress-html"
+                        name="progres-html"
+                        max="10"
+                        value="3">3/10
+              </progress>
+            </div>
+      
+          </section>
+        </div>        
+
+      </div>
+
+    </div>
+  </section>
+
+
+  
   
 
 
@@ -103,6 +210,8 @@
   <!-- Plugins -->
   <script src="js/lib/jquery-3.3.1.slim.min.js"></script>
   <script src="js/lib/bootstrap.bundle.min.js"></script>
+  <script src="js/lib/parallax.min.js"></script>
+  <script src="js/lib/scrollreveal.min.js"></script>
 
   <!-- Page scripts -->
   <script src="js/main.js"></script>

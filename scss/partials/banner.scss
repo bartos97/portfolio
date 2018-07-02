@@ -1,10 +1,10 @@
 .main-banner {
   min-height: 100vh;
-  background-color: $gray-900;
-  background-image: url('../../img/banner_bg3.jpg');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+  // background-color: $gray-900;
+  // background-image: url('../../img/banner_bg3.jpg');
+  // background-size: cover;
+  // background-position: center center;
+  // background-repeat: no-repeat;
   color: $white;
   text-align: center;
   display: flex;
@@ -15,7 +15,7 @@
   // text
   h1 {
     text-shadow: 2px 2px rgba(0,0,0,0.35);
-    font-family: 'Ubuntu', sans-serif;
+    font-family: $font-family-alt;
     line-height: 1.4;
     font-size: 2rem;
     @include media-breakpoint-up(sm) {
@@ -59,7 +59,7 @@
       transition-duration: 0.3s;
 
       &:hover {
-        background-color: rgba(0,0,0,0.75);
+        background-color: $link-hover-color;
       }
 
       &:not(:first-child) {

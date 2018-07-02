@@ -1,7 +1,8 @@
 // STICKY NAVBAR
 (function() {
   var navbar = $('.navbar.sticky');
-  var navbarOffset = navbar.offset().top;
+  // var navbarOffset = navbar.offset().top;
+  var navbarOffset = $(window).outerHeight()/4;  
 
   resizeFunction();
   $(window).resize(resizeFunction);
@@ -24,4 +25,24 @@
     }
   }
   
+})();
+
+
+// SCROLL REVEAL SETUP
+(function() {
+  window.sr = ScrollReveal({
+    mobile: false,
+    delay: 500,
+    duration: 1000
+  });
+
+  sr.reveal('.enter-left', {
+    origin: 'left',
+    distance: '50vw'
+  });
+
+  sr.reveal('.enter-right', {
+    origin: 'right',
+    distance: '50vw'
+  });
 })();
