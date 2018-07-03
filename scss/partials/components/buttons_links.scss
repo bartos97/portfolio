@@ -1,0 +1,56 @@
+// LINKS
+a.text-link {
+  font-weight: $font-weight-bold;
+  position: relative;
+  
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 1px;
+    background-color: darken($link-color, 15%);
+    transition-duration: 0.3s;
+  }
+  
+  &:hover {
+    text-decoration: none;
+    &:before {
+      left: 0;
+      width: 100%;
+    }  
+  }  
+}
+
+
+// BUTTONS
+.btn {
+  $btn-height: $btn-padding-x*2 + $font-size-base*$line-height-base;
+  font-family: $font-family-alt;
+  
+  &.btn-shadow {
+    @include mt_box_shadow(1);
+    &:hover {
+      @include mt_box_shadow(2);
+    }
+  }
+
+  &.btn-arrow {
+    .fa, .fas {
+      font-size: $font-size-sm;
+      width: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      transition-duration: 0.3s;
+      vertical-align: middle;
+      text-align: right;
+    }
+
+    &:hover {
+      .fa, .fas {
+        width: 2rem;
+      }
+    }
+  }
+}

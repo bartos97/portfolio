@@ -1,0 +1,48 @@
+// ICONS WRAPPER
+.icons-wrap {
+  $font-size: 1.5rem;
+  $padding: 0.75rem;
+  $size: $font-size*1.2 + 2*$padding;
+
+  .icon-holder {
+    color: $white;
+    padding: $padding;
+    background-color: rgba(0,0,0,0.5);
+    display: inline-block;
+    min-width: $size;
+    min-height: $size;
+    border-radius: $size;
+    line-height: 1;
+    text-align: center;    
+    transition-duration: 0.3s;
+
+    &:hover {
+      background-color: $link-hover-color;
+    }
+
+    &:not(:first-child) {
+      margin-left: $spacer-3;
+    }
+  }
+
+  .fab, .fas, .fa {
+    font-size: $font-size;
+  }
+
+  &.icons-small {
+    $font-size-sm: 1rem;
+    $padding-sm: 1rem;
+    $size-sm: $font-size-sm*1.2 + 2*$padding-sm;
+
+    .icon-holder {
+      padding: $padding-sm;
+      min-width: $size-sm;
+      min-height: $size-sm;
+    }
+
+    .fab, .fas, .fa {
+      font-size: $font-size-sm;
+    }
+  }
+
+}

@@ -1,0 +1,7 @@
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.b-shadow-1 {
+  @include mt_box_shadow(1);
+}

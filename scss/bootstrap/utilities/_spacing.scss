@@ -47,5 +47,23 @@
     .mx#{$infix}-auto {
       margin-left: auto !important;
     }
+
+    .m#{$infix}-gutter { margin: $grid-gutter-width !important; }
+    .mt#{$infix}-gutter,
+    .my#{$infix}-gutter {
+      margin-top: $grid-gutter-width !important;
+    }
+    .mr#{$infix}-gutter,
+    .mx#{$infix}-gutter {
+      margin-right: $grid-gutter-width !important;
+    }
+    .mb#{$infix}-gutter,
+    .my#{$infix}-gutter {
+      margin-bottom: $grid-gutter-width !important;
+    }
+    .ml#{$infix}-gutter,
+    .mx#{$infix}-gutter {
+      margin-left: $grid-gutter-width !important;
+    }
   }
 }

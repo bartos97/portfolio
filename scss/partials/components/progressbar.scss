@@ -1,0 +1,42 @@
+// Custom progress bars
+.progress-wrap {
+  & + & {
+    margin-top: $spacer-4;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-bold;
+  }
+
+  progress {
+    display: block;
+    width: 100%;
+  }
+}
+
+progress {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 0.3125rem;
+  border: none;
+  border-radius: 0.3125rem;
+  color: $primary; // for IE10
+  
+  &::-webkit-progress-bar {
+    border-radius: 0.4rem;
+    background-color: $gray-300;
+  }
+
+  &::-webkit-progress-value {
+    border-radius: 0.4rem;
+    background-color: $primary;
+  }
+}
+
+::-moz-progress-bar {
+  border-radius: 0.4rem;
+  background-color: $primary;
+}

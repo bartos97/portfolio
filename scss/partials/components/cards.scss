@@ -1,0 +1,40 @@
+// Extension of bootstrap's default cards
+.card {
+  @include mt_box_shadow(1);
+  transition-duration: 0.3s;
+
+  &:hover {
+    @include mt_box_shadow(3);
+  }
+
+  .card-img-top {
+    overflow: hidden;
+    position: relative;
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(0,0,0,0.5);
+      opacity: 0;
+      transition-duration: 0.5s;
+    }
+
+    &:hover .overlay {
+      opacity: 1;
+    }
+
+    .icons-wrap .icon-holder:not(:hover) {
+      background-color: #000;
+    } 
+  }
+
+  .card-text {
+    font-size: $font-size-sm;
+  }
+}

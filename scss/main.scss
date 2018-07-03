@@ -9,9 +9,16 @@
 @import "modules/my_mixins";
 @import "modules/shadows";
 
-//Partials
-@import "partials/basic_elem_typo";
-@import "partials/util_class";
-@import "partials/components";
+//Partials and components
+@import "partials/base";
+@import "partials/utilities";
+
 @import "partials/navbar";
 @import "partials/banner";
+
+@import "partials/components/buttons_links";
+@import "partials/components/cards";
+@import "partials/components/icons";
+@import "partials/components/progressbar";
+@import "partials/components/sections";
+@import "partials/components/small_wrappers";
