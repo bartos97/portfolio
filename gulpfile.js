@@ -23,21 +23,13 @@ gulp.task('sass', function() {
   })) 
 });
 
-
-// Bootstrap task
-// compiles bootstrap
-// gulp.task('bootstrap', function() {
-//   return gulp.src('scss/bootstrap/bootstrap.scss')
-//   .pipe(sourcemaps.init())
-//   .pipe(sass({
-//     outputStyle: 'compressed'
-//   }).on('error', sass.logError))
-//   .pipe(sourcemaps.write())
-//   .pipe(gulp.dest('css'))
-//   .pipe(browserSync.reload({
-//     stream: true
-//   })) 
-// });
+gulp.task('sassLite', function() {
+  return gulp.src('scss/main.scss')
+  .pipe(sass({
+    outputStyle: 'compressed'
+  }).on('error', sass.logError))
+  .pipe(gulp.dest('css/'))
+});
 
 
 // prefixCss task
@@ -71,6 +63,14 @@ gulp.task('watch', function (){
 // Default task
 gulp.task('default', function (callback) {
   runSequence(['browserSync', 'watch'],
+    callback
+  );
+});
+
+
+// Build CSS task
+gulp.task('build-css', function (callback) {
+  runSequence(['sassLite', 'prefixCss'],
     callback
   );
 });
