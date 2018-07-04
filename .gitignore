@@ -1,6 +1,5 @@
 # Custom
 node_modules/
-gulpfile.js
 _BIN/
 
 # Windows image file caches
