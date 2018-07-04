@@ -70,6 +70,11 @@
     background-color: #fff;
     @include mt_box_shadow(2);
 
+    @include media-breakpoint-up(sm) {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
     .navbar-brand {
       img {
         &.brand-sticked {
