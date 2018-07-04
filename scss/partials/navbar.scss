@@ -49,6 +49,7 @@
         margin-left: $spacer;
         margin-right: $spacer;
         transition-duration: 0.3s;
+        text-transform: uppercase;
         
         &:before {
           height: 2px;
@@ -60,6 +61,7 @@
       &.active .nav-link:before {
         left: 0;
         width: 100%;
+        background-color: $primary;
       }
     }
   }
@@ -96,7 +98,8 @@
     }
 
     .navbar-nav .nav-link {
-      color: $gray-900;
+      color: $gray-700;
+      font-size: $font-size-sm;
       &:before {
         background-color: $black;
       }
