@@ -1,0 +1,80 @@
+// Small contact details wrapper
+.contact-details-small {
+  margin-top: $spacer;
+  display: flex;
+  flex-direction: column;
+  font-size: $font-size-sm;
+
+  @include media-breakpoint-up(sm) {
+    flex-direction: row;
+
+    .single-info-wrap {
+      & + .single-info-wrap {
+        margin-left: $spacer-4;
+      }
+    }
+  }
+
+  
+  a {
+    color: $black;
+    font-weight: $font-weight-base;
+  }
+
+  .fa, .fas, strong {
+    margin-right: $spacer-2;
+    color: $primary;
+  }
+}
+
+
+// Big contact details wrapper
+.contact-details-big {
+  @include media-breakpoint-down(md) {
+    margin-bottom: $spacer-5;
+  }
+
+  .contact {
+    line-height: 1;
+    // @include media-breakpoint-down(md) {
+    //   text-align: center;
+    // }
+
+    .fa, .fas, .fab, .far {
+      font-size: 1.5rem;
+      min-width: 2rem;
+      margin-right: $spacer-2;
+      vertical-align: middle;
+      color: $gray-700;
+      text-align: center;
+    }
+
+    .text-link {
+      font-weight: $font-weight-light;
+      color: $gray-600;
+      font-family: $font-family-alt;
+      padding: 0.75rem 0;
+      display: inline-block;
+    }
+  }
+}
+
+
+// Wrapper for buttons evenly spaced on mobile
+.btns-wrap-mobile-even {
+  display: flex;
+
+  .btn {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    @include media-breakpoint-down(xs) {    
+      flex-grow: 1;
+      flex-basis: 50%;
+    }
+
+    & + .btn {
+      margin-left: $spacer-2;
+    }
+  }
+}

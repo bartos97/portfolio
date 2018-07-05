@@ -36,11 +36,14 @@
 
   <!-- NAVBAR -->
   <nav class="navbar navbar-expand-sm navbar-dark fixed-top sticky">
+
+    <!-- logo -->
     <a class="navbar-brand" href="#section-banner">
       <img src="img/logo_small.png" alt="Bartek Zając logo" class="brand-default">
       <img src="img/logo_small_inverse.png" alt="Bartek Zając logo" class="brand-sticked">
     </a>
 
+    <!-- menu toggler -->
     <button class="navbar-toggler hidden-lg-up"
             type="button"
             data-toggle="collapse" data-target="#collapse-main-nav"
@@ -50,35 +53,33 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
+    <!-- menu -->
     <div class="collapse navbar-collapse" id="collapse-main-nav">
       <ul class="navbar-nav m-auto mt-2 mt-lg-0">
-
         <li class="nav-item active">
           <a class="nav-link text-link" href="#section-banner">
             Start <span class="sr-only sr-active">(obecna strona)</span>
           </a>
         </li>
-
         <li class="nav-item">
           <a class="nav-link text-link" href="#section-about">O mnie</a>
         </li>
-
         <li class="nav-item">
           <a class="nav-link text-link" href="#section-projects">Projekty</a>
         </li>
-
         <li class="nav-item">
           <a class="nav-link text-link" href="#section-contact">Kontakt</a>
         </li>
-
       </ul>
     </div>
+
   </nav>
 
 
-  <!-- BANNER - PAGE HEADER -->
+  <!-- BANNER: page header -->
   <header class="main-banner" id="section-banner"
           data-parallax="scroll" data-image-src="img/banner_bg3.jpg">
+
     <h1>
       <div class="small">Witaj</div>
       <div class="name">Jestem Bartek</div>
@@ -93,6 +94,7 @@
         <i class="fab fa-linkedin-in"></i>
       </a>
     </div>
+
   </header>
 
 
@@ -107,6 +109,7 @@
 
       <div class="row image-divider-wrap">
 
+        <!-- text about -->
         <div class="col-md-6 divider-column overflow-hidden">
           <section class="inner-section enter-left">
             <header>
@@ -136,10 +139,12 @@
           </section>
         </div>
 
+        <!-- divider -->
         <div class="image-divider">
           <img src="img/content/me.jpg" alt="Moje zdjęcie">
         </div>
 
+        <!-- progress bars -->
         <div class="col-md-6 divider-column overflow-hidden">
           <section class="inner-section enter-right">
             <header>
@@ -203,9 +208,9 @@
           </section>
         </div>        
 
-      </div>
+      </div><!-- /.row -->
 
-    </div>
+    </div><!-- /.container -->
   </section>
 
 
@@ -220,12 +225,13 @@
 
       <div class="row">
 
+        <!-- card item -->
         <div class="col-sm-6 col-lg-4 mb-gutter mb-lg-0">
           <div class="card">
 
             <a href="http://bartlomiejzajac.pl/slowka/" target="_blank" class="card-img-top">
               <img src="img/content/card_slowka.jpg" alt="Podgląd strony">
-              <div class="overlay">
+              <div class="overlay" aria-hidden="true">
                 <div class="icons-wrap icons-small">
                   <div class="icon-holder">
                     <i class="fas fa-external-link-alt"></i>
@@ -245,12 +251,13 @@
           </div>
         </div>
 
+        <!-- card item -->
         <div class="col-sm-6 col-lg-4 mb-gutter mb-lg-0">
           <div class="card">
 
             <a href="#" class="card-img-top">
               <img src="img/example.jpg" alt="">
-              <div class="overlay">
+              <div class="overlay" aria-hidden="true">
                 <div class="icons-wrap icons-small">
                   <div class="icon-holder">
                     <i class="fas fa-external-link-alt"></i>
@@ -270,12 +277,13 @@
           </div>
         </div>
 
+        <!-- card item -->
         <div class="col-sm-6 col-lg-4">
           <div class="card">
 
             <a href="#" class="card-img-top">
               <img src="img/example.jpg" alt="">
-              <div class="overlay">
+              <div class="overlay" aria-hidden="true">
                 <div class="icons-wrap icons-small">
                   <div class="icon-holder">
                     <i class="fas fa-external-link-alt"></i>
@@ -295,9 +303,110 @@
           </div>
         </div>
 
-      </div>
+      </div><!-- /.row -->
 
-    </div>
+    </div><!-- /.container -->
+  </section>
+
+
+  <!-- SECTION: contact -->
+  <section class="page-section has-shadow" id="section-contact">
+    <div class="container">
+
+      <header class="page-section-header">
+        <h2 class="page-section-title">Kontakt</h2>
+        <p class="page-section-subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id est excepturi debitis repellat iure deserunt, doloribus expedita recusandae cumque?</p>
+      </header>
+
+      <div class="row">
+
+        <!-- contact informations -->
+        <div class="col-lg-5 offset-xl-1 col-xl-4 d-flex flex-column justify-content-center">
+          <div class="contact-details-big">
+            <div class="contact">
+              <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+              <span class="sr-only">Lokalizacja:</span>
+              <span class="text-link">Kraków, Polska</span>
+            </div>
+            <div class="contact">
+              <i class="fas fa-phone-volume" aria-hidden="true"></i>
+              <span class="sr-only">Numer telefonu kontaktowego:</span>
+              <a href="tel:+48-511-952-318" class="text-link">511 952 318</a>
+            </div>
+            <div class="contact">
+              <i class="far fa-envelope" aria-hidden="true"></i>
+              <span class="sr-only">Kontaktowy adres e-mail:</span>
+              <a href="mailto:zajac.bartlomiej97@gmail.com" class="text-link">zajac.bartlomiej97@gmail.com</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- contact form -->
+        <div class="col-lg-7 col-xl-6">
+          <form class="form-default"
+                action=""
+                method="post"
+                id="contact-form" name="contact-form">
+  
+            <!-- name -->
+            <div class="form-group">
+              <label for="contact-form-name">Nazwa</label>
+              <input type="text"
+                      name="contact-form-name" id="contact-form-name"
+                      class="form-control"
+                      placeholder="np. Jan Kowalski"
+                      required
+                      minlength="2"
+                      maxlength="30">
+            </div>
+
+            <div class="form-row">
+              <!-- email -->
+              <div class="form-group col-md-6">
+                <label for="contact-form-email">Adres email</label>
+                <input type="email"
+                       name="contact-form-email" id="contact-form-email"
+                       class="form-control"
+                       placeholder="np. jan@kowalski.com"
+                       required
+                       minlength="2"
+                       maxlength="30">
+              </div>
+
+              <!-- tel -->
+              <div class="form-group col-md-6">
+                <label for="contact-form-email">Numer telefonu</label>
+                <input type="tel"
+                       name="contact-form-tel" id="contact-form-tel"
+                       class="form-control"
+                       placeholder="np. 321645798"
+                       minlength="7"
+                       maxlength="15">
+              </div>
+            </div>
+
+            <!-- message -->
+            <div class="form-group">
+              <label for="contact-form-msg">Wiadomość</label>
+              <textarea class="form-control"
+                        name="contact-form-msg" id="contact-form-msg"
+                        rows="3"
+                        required
+                        placeholder="Co chcesz mi powiedzieć?"></textarea>
+            </div>
+
+            <!-- submit and reset -->
+            <div class="form-group btns-wrap-mobile-even mb-0">
+              <button type="submit" class="btn btn-primary">Wyślij</button>
+              <button type="reset" class="btn btn-outline-secondary">Wyczyść</button>
+            </div>
+
+          </form>
+        </div>
+
+      </div><!-- /.row -->
+
+    </div><!-- /.container -->
   </section>
   
 
