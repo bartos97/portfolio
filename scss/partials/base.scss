@@ -3,6 +3,11 @@ body {
   background-color: $gray-100;
 }
 
+.page-wrap {
+  background-color: $gray-100;
+  margin-bottom: $footer-height;
+}
+
 img {
   max-width: 100%;
 }

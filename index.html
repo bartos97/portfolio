@@ -32,7 +32,7 @@
   <![endif]-->
 </head>
 
-<body>
+<body class="fixed-footer">
 
   <!-- NAVBAR -->
   <nav class="navbar navbar-expand-sm navbar-dark fixed-top sticky">
@@ -97,317 +97,332 @@
 
   </header>
 
-
-  <!-- SECTION: about me -->
-  <section class="page-section has-shadow" id="section-about">
-    <div class="container">
-
-      <header class="page-section-header">
-        <h2 class="page-section-title">Przedstaw się ładnie!</h2>
-        <p class="page-section-subtitle">... czyli kilka słów o tym kim jestem i co już potrafię</p>
-      </header>
-
-      <div class="row image-divider-wrap">
-
-        <!-- text about -->
-        <div class="col-md-6 divider-column overflow-hidden">
-          <section class="inner-section enter-left">
-            <header>
-              <h4>Trochę o mnie</h4>
-            </header>
-
-            <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem excepturi iusto animi labore officiis. Quibusdam quaerat officiis aperiam, iure similique quis nam, cupiditate aut voluptates quod illo eaque, vitae aliquid corrupti ex molestias laborum? Non reprehenderit aperiam voluptates illum eaque deleniti delectus optio nesciunt blanditiis praesentium? Rem, <a href="#" class="text-link">laborum alias velit</a> amet eos possimus explicabo dolore nisi ad cumque animi, perferendis dolor atque debitis temporibus sapiente! Voluptatibus, incidunt sed non inventore ea possimus illo dolore sit eveniet alias expedita magni ullam..</p>
-            
-            <div class="contact-details-small">
-              <div class="single-info-wrap">
-                <i class="fas fa-phone" aria-hidden="true"></i>
+  
+  <div class="page-wrap"> 
+  
+    <!-- SECTION: about me -->
+    <section class="page-section has-shadow" id="section-about">
+      <div class="container">
+  
+        <header class="page-section-header">
+          <h2 class="page-section-title">Przedstaw się ładnie!</h2>
+          <p class="page-section-subtitle">... czyli kilka słów o tym kim jestem i co już potrafię</p>
+        </header>
+  
+        <div class="row image-divider-wrap">
+  
+          <!-- text about -->
+          <div class="col-md-6 divider-column overflow-hidden">
+            <section class="inner-section enter-left">
+              <header>
+                <h4>Trochę o mnie</h4>
+              </header>
+  
+              <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem excepturi iusto animi labore officiis. Quibusdam quaerat officiis aperiam, iure similique quis nam, cupiditate aut voluptates quod illo eaque, vitae aliquid corrupti ex molestias laborum? Non reprehenderit aperiam voluptates illum eaque deleniti delectus optio nesciunt blanditiis praesentium? Rem, <a href="#" class="text-link">laborum alias velit</a> amet eos possimus explicabo dolore nisi ad cumque animi, perferendis dolor atque debitis temporibus sapiente! Voluptatibus, incidunt sed non inventore ea possimus illo dolore sit eveniet alias expedita magni ullam..</p>
+              
+              <div class="contact-details-small">
+                <div class="single-info-wrap">
+                  <i class="fas fa-phone" aria-hidden="true"></i>
+                  <span class="sr-only">Numer telefonu kontaktowego:</span>
+                  <a href="tel:+48-511-952-318" class="text-link">511 952 318</a>
+                </div>
+  
+                <div class="single-info-wrap">
+                  <i class="fas fa-envelope" aria-hidden="true"></i>
+                  <span class="sr-only">Kontaktowy adres e-mail:</span>
+                  <a href="mailto:zajac.bartlomiej97@gmail.com" class="text-link">zajac.bartlomiej97@gmail.com</a>
+                </div>
+              </div>
+  
+              <div class="mt-4 mb-2 btns-wrap-mobile-even">
+                <a href="#" class="btn btn-primary">Pobierz CV</a>
+                <a href="#" class="btn btn-primary">Wyślij wiadomość</a>
+              </div>
+            </section>
+          </div>
+  
+          <!-- divider -->
+          <div class="image-divider">
+            <img src="img/content/me.jpg" alt="Moje zdjęcie">
+          </div>
+  
+          <!-- progress bars -->
+          <div class="col-md-6 divider-column overflow-hidden">
+            <section class="inner-section enter-right">
+              <header>
+                <h4>Umiejętności</h4>
+              </header>
+  
+              <div class="progress-wrap">
+                <label for="progres-html">HTML5 / CSS3</label>
+                <progress id="progress-html"
+                          name="progres-html"
+                          max="10"
+                          value="8">8/10
+                </progress>
+              </div>
+  
+              <div class="progress-wrap">
+                <label for="progres-html">JavaScript / jQuery</label>
+                <progress id="progress-html"
+                          name="progres-html"
+                          max="10"
+                          value="6">6/10
+                </progress>
+              </div>
+  
+              <div class="progress-wrap">
+                <label for="progres-html">SASS / Gulp</label>
+                <progress id="progress-html"
+                          name="progres-html"
+                          max="10"
+                          value="6">6/10
+                </progress>
+              </div>
+  
+              <div class="progress-wrap">
+                <label for="progres-html">PHP / MySQL</label>
+                <progress id="progress-html"
+                          name="progres-html"
+                          max="10"
+                          value="5">5/10
+                </progress>
+              </div>
+  
+              <div class="progress-wrap">
+                <label for="progres-html">Git</label>
+                <progress id="progress-html"
+                          name="progres-html"
+                          max="10"
+                          value="3">3/10
+                </progress>
+              </div>
+  
+              <div class="progress-wrap">
+                <label for="progres-html">C / C++</label>
+                <progress id="progress-html"
+                          name="progres-html"
+                          max="10"
+                          value="2">2/10
+                </progress>
+              </div>
+        
+            </section>
+          </div>        
+  
+        </div><!-- /.row -->
+  
+      </div><!-- /.container -->
+    </section>
+  
+  
+    <!-- SECTION: projects -->
+    <section class="page-section bg-alt" id="section-project">
+      <div class="container">
+  
+        <header class="page-section-header">
+          <h2 class="page-section-title">Osatatnie projekty</h2>
+          <p class="page-section-subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id est excepturi debitis repellat iure deserunt, doloribus expedita recusandae cumque?</p>
+        </header>
+  
+        <div class="row">
+  
+          <!-- card item -->
+          <div class="col-sm-6 col-lg-4 mb-gutter mb-lg-0">
+            <div class="card">
+  
+              <a href="http://bartlomiejzajac.pl/slowka/" target="_blank" class="card-img-top">
+                <img src="img/content/card_slowka.jpg" alt="Podgląd strony">
+                <div class="overlay" aria-hidden="true">
+                  <div class="icons-wrap icons-small">
+                    <div class="icon-holder">
+                      <i class="fas fa-external-link-alt"></i>
+                    </div>
+                  </div>
+                </div>
+              </a>
+  
+              <div class="card-body">
+                <h4 class="card-title">Gra w słówka</h4>
+                <p class="card-text">Prosta gra polegająca na podaniu poprawnego tłumaczenia danego słowa lub zwrotu. Baza słówek jest podzielona na kategorie oraz dostępne są dwa tryby tłumaczenia. Możliwość rejestracji własnego konta i zapisywania statystyk.</p>
+                <a href="http://bartlomiejzajac.pl/slowka/" target="_blank" class="btn btn-primary btn-arrow">
+                  Zobacz <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+  
+            </div>
+          </div>
+  
+          <!-- card item -->
+          <div class="col-sm-6 col-lg-4 mb-gutter mb-lg-0">
+            <div class="card">
+  
+              <a href="#" class="card-img-top">
+                <img src="img/example.jpg" alt="">
+                <div class="overlay" aria-hidden="true">
+                  <div class="icons-wrap icons-small">
+                    <div class="icon-holder">
+                      <i class="fas fa-external-link-alt"></i>
+                    </div>
+                  </div>
+                </div>
+              </a>
+  
+              <div class="card-body">
+                <h4 class="card-title">Title</h4>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit ad placeat porro delectus non quasi necessitatibus sunt iusto quisquam facere vel dolores optio magni, officia in, cupiditate ducimus quis sit.</p>
+                <a href="#" class="btn btn-primary btn-arrow">
+                  Zobacz <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+  
+            </div>
+          </div>
+  
+          <!-- card item -->
+          <div class="col-sm-6 col-lg-4">
+            <div class="card">
+  
+              <a href="#" class="card-img-top">
+                <img src="img/example.jpg" alt="">
+                <div class="overlay" aria-hidden="true">
+                  <div class="icons-wrap icons-small">
+                    <div class="icon-holder">
+                      <i class="fas fa-external-link-alt"></i>
+                    </div>
+                  </div>
+                </div>
+              </a>
+  
+              <div class="card-body">
+                <h4 class="card-title">Title</h4>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit ad placeat porro delectus non quasi necessitatibus sunt iusto quisquam facere vel dolores optio magni, officia in, cupiditate ducimus quis sit.</p>
+                <a href="#" class="btn btn-primary btn-arrow">
+                  Zobacz <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+  
+            </div>
+          </div>
+  
+        </div><!-- /.row -->
+  
+      </div><!-- /.container -->
+    </section>
+  
+  
+    <!-- SECTION: contact -->
+    <section class="page-section has-shadow" id="section-contact">
+      <div class="container">
+  
+        <header class="page-section-header">
+          <h2 class="page-section-title">Kontakt</h2>
+          <p class="page-section-subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id est excepturi debitis repellat iure deserunt, doloribus expedita recusandae cumque?</p>
+        </header>
+  
+        <div class="row">
+  
+          <!-- contact informations -->
+          <div class="col-lg-5 offset-xl-1 col-xl-4 d-flex flex-column justify-content-center">
+            <div class="contact-details-big">
+              <div class="contact">
+                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                <span class="sr-only">Lokalizacja:</span>
+                <span class="text-link">Kraków, Polska</span>
+              </div>
+              <div class="contact">
+                <i class="fas fa-phone-volume" aria-hidden="true"></i>
                 <span class="sr-only">Numer telefonu kontaktowego:</span>
                 <a href="tel:+48-511-952-318" class="text-link">511 952 318</a>
               </div>
-
-              <div class="single-info-wrap">
-                <i class="fas fa-envelope" aria-hidden="true"></i>
+              <div class="contact">
+                <i class="far fa-envelope" aria-hidden="true"></i>
                 <span class="sr-only">Kontaktowy adres e-mail:</span>
                 <a href="mailto:zajac.bartlomiej97@gmail.com" class="text-link">zajac.bartlomiej97@gmail.com</a>
               </div>
             </div>
-
-            <div class="mt-4 mb-2 btns-wrap-mobile-even">
-              <a href="#" class="btn btn-primary">Pobierz CV</a>
-              <a href="#" class="btn btn-primary">Wyślij wiadomość</a>
-            </div>
-          </section>
-        </div>
-
-        <!-- divider -->
-        <div class="image-divider">
-          <img src="img/content/me.jpg" alt="Moje zdjęcie">
-        </div>
-
-        <!-- progress bars -->
-        <div class="col-md-6 divider-column overflow-hidden">
-          <section class="inner-section enter-right">
-            <header>
-              <h4>Umiejętności</h4>
-            </header>
-
-            <div class="progress-wrap">
-              <label for="progres-html">HTML5 / CSS3</label>
-              <progress id="progress-html"
-                        name="progres-html"
-                        max="10"
-                        value="8">8/10
-              </progress>
-            </div>
-
-            <div class="progress-wrap">
-              <label for="progres-html">JavaScript / jQuery</label>
-              <progress id="progress-html"
-                        name="progres-html"
-                        max="10"
-                        value="6">6/10
-              </progress>
-            </div>
-
-            <div class="progress-wrap">
-              <label for="progres-html">SASS / Gulp</label>
-              <progress id="progress-html"
-                        name="progres-html"
-                        max="10"
-                        value="6">6/10
-              </progress>
-            </div>
-
-            <div class="progress-wrap">
-              <label for="progres-html">PHP / MySQL</label>
-              <progress id="progress-html"
-                        name="progres-html"
-                        max="10"
-                        value="5">5/10
-              </progress>
-            </div>
-
-            <div class="progress-wrap">
-              <label for="progres-html">Git</label>
-              <progress id="progress-html"
-                        name="progres-html"
-                        max="10"
-                        value="3">3/10
-              </progress>
-            </div>
-
-            <div class="progress-wrap">
-              <label for="progres-html">C / C++</label>
-              <progress id="progress-html"
-                        name="progres-html"
-                        max="10"
-                        value="2">2/10
-              </progress>
-            </div>
-      
-          </section>
-        </div>        
-
-      </div><!-- /.row -->
-
-    </div><!-- /.container -->
-  </section>
-
-
-  <!-- SECTION: projects -->
-  <section class="page-section bg-alt" id="section-project">
-    <div class="container">
-
-      <header class="page-section-header">
-        <h2 class="page-section-title">Osatatnie projekty</h2>
-        <p class="page-section-subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id est excepturi debitis repellat iure deserunt, doloribus expedita recusandae cumque?</p>
-      </header>
-
-      <div class="row">
-
-        <!-- card item -->
-        <div class="col-sm-6 col-lg-4 mb-gutter mb-lg-0">
-          <div class="card">
-
-            <a href="http://bartlomiejzajac.pl/slowka/" target="_blank" class="card-img-top">
-              <img src="img/content/card_slowka.jpg" alt="Podgląd strony">
-              <div class="overlay" aria-hidden="true">
-                <div class="icons-wrap icons-small">
-                  <div class="icon-holder">
-                    <i class="fas fa-external-link-alt"></i>
-                  </div>
-                </div>
-              </div>
-            </a>
-
-            <div class="card-body">
-              <h4 class="card-title">Gra w słówka</h4>
-              <p class="card-text">Prosta gra polegająca na podaniu poprawnego tłumaczenia danego słowa lub zwrotu. Baza słówek jest podzielona na kategorie oraz dostępne są dwa tryby tłumaczenia. Możliwość rejestracji własnego konta i zapisywania statystyk.</p>
-              <a href="http://bartlomiejzajac.pl/slowka/" target="_blank" class="btn btn-primary btn-arrow">
-                Zobacz <i class="fas fa-arrow-right"></i>
-              </a>
-            </div>
-
           </div>
-        </div>
-
-        <!-- card item -->
-        <div class="col-sm-6 col-lg-4 mb-gutter mb-lg-0">
-          <div class="card">
-
-            <a href="#" class="card-img-top">
-              <img src="img/example.jpg" alt="">
-              <div class="overlay" aria-hidden="true">
-                <div class="icons-wrap icons-small">
-                  <div class="icon-holder">
-                    <i class="fas fa-external-link-alt"></i>
-                  </div>
-                </div>
-              </div>
-            </a>
-
-            <div class="card-body">
-              <h4 class="card-title">Title</h4>
-              <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit ad placeat porro delectus non quasi necessitatibus sunt iusto quisquam facere vel dolores optio magni, officia in, cupiditate ducimus quis sit.</p>
-              <a href="#" class="btn btn-primary btn-arrow">
-                Zobacz <i class="fas fa-arrow-right"></i>
-              </a>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- card item -->
-        <div class="col-sm-6 col-lg-4">
-          <div class="card">
-
-            <a href="#" class="card-img-top">
-              <img src="img/example.jpg" alt="">
-              <div class="overlay" aria-hidden="true">
-                <div class="icons-wrap icons-small">
-                  <div class="icon-holder">
-                    <i class="fas fa-external-link-alt"></i>
-                  </div>
-                </div>
-              </div>
-            </a>
-
-            <div class="card-body">
-              <h4 class="card-title">Title</h4>
-              <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit ad placeat porro delectus non quasi necessitatibus sunt iusto quisquam facere vel dolores optio magni, officia in, cupiditate ducimus quis sit.</p>
-              <a href="#" class="btn btn-primary btn-arrow">
-                Zobacz <i class="fas fa-arrow-right"></i>
-              </a>
-            </div>
-
-          </div>
-        </div>
-
-      </div><!-- /.row -->
-
-    </div><!-- /.container -->
-  </section>
-
-
-  <!-- SECTION: contact -->
-  <section class="page-section has-shadow" id="section-contact">
-    <div class="container">
-
-      <header class="page-section-header">
-        <h2 class="page-section-title">Kontakt</h2>
-        <p class="page-section-subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id est excepturi debitis repellat iure deserunt, doloribus expedita recusandae cumque?</p>
-      </header>
-
-      <div class="row">
-
-        <!-- contact informations -->
-        <div class="col-lg-5 offset-xl-1 col-xl-4 d-flex flex-column justify-content-center">
-          <div class="contact-details-big">
-            <div class="contact">
-              <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-              <span class="sr-only">Lokalizacja:</span>
-              <span class="text-link">Kraków, Polska</span>
-            </div>
-            <div class="contact">
-              <i class="fas fa-phone-volume" aria-hidden="true"></i>
-              <span class="sr-only">Numer telefonu kontaktowego:</span>
-              <a href="tel:+48-511-952-318" class="text-link">511 952 318</a>
-            </div>
-            <div class="contact">
-              <i class="far fa-envelope" aria-hidden="true"></i>
-              <span class="sr-only">Kontaktowy adres e-mail:</span>
-              <a href="mailto:zajac.bartlomiej97@gmail.com" class="text-link">zajac.bartlomiej97@gmail.com</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- contact form -->
-        <div class="col-lg-7 col-xl-6">
-          <form class="form-default"
-                action=""
-                method="post"
-                id="contact-form" name="contact-form">
   
-            <!-- name -->
-            <div class="form-group">
-              <label for="contact-form-name">Nazwa</label>
-              <input type="text"
-                      name="contact-form-name" id="contact-form-name"
-                      class="form-control"
-                      placeholder="np. Jan Kowalski"
-                      required
-                      minlength="2"
-                      maxlength="30">
-            </div>
-
-            <div class="form-row">
-              <!-- email -->
-              <div class="form-group col-md-6">
-                <label for="contact-form-email">Adres email</label>
-                <input type="email"
-                       name="contact-form-email" id="contact-form-email"
-                       class="form-control"
-                       placeholder="np. jan@kowalski.com"
-                       required
-                       minlength="2"
-                       maxlength="30">
-              </div>
-
-              <!-- tel -->
-              <div class="form-group col-md-6">
-                <label for="contact-form-email">Numer telefonu</label>
-                <input type="tel"
-                       name="contact-form-tel" id="contact-form-tel"
-                       class="form-control"
-                       placeholder="np. 321645798"
-                       minlength="7"
-                       maxlength="15">
-              </div>
-            </div>
-
-            <!-- message -->
-            <div class="form-group">
-              <label for="contact-form-msg">Wiadomość</label>
-              <textarea class="form-control"
-                        name="contact-form-msg" id="contact-form-msg"
-                        rows="3"
+          <!-- contact form -->
+          <div class="col-lg-7 col-xl-6">
+            <form class="form-default"
+                  action=""
+                  method="post"
+                  id="contact-form" name="contact-form">
+    
+              <!-- name -->
+              <div class="form-group">
+                <label for="contact-form-name">Nazwa</label>
+                <input type="text"
+                        name="contact-form-name" id="contact-form-name"
+                        class="form-control"
+                        placeholder="np. Jan Kowalski"
                         required
-                        placeholder="Co chcesz mi powiedzieć?"></textarea>
-            </div>
+                        minlength="2"
+                        maxlength="30">
+              </div>
+  
+              <div class="form-row">
+                <!-- email -->
+                <div class="form-group col-md-6">
+                  <label for="contact-form-email">Adres email</label>
+                  <input type="email"
+                         name="contact-form-email" id="contact-form-email"
+                         class="form-control"
+                         placeholder="np. jan@kowalski.com"
+                         required
+                         minlength="2"
+                         maxlength="30">
+                </div>
+  
+                <!-- tel -->
+                <div class="form-group col-md-6">
+                  <label for="contact-form-email">Numer telefonu</label>
+                  <input type="tel"
+                         name="contact-form-tel" id="contact-form-tel"
+                         class="form-control"
+                         placeholder="np. 321645798"
+                         minlength="7"
+                         maxlength="15">
+                </div>
+              </div>
+  
+              <!-- message -->
+              <div class="form-group">
+                <label for="contact-form-msg">Wiadomość</label>
+                <textarea class="form-control"
+                          name="contact-form-msg" id="contact-form-msg"
+                          rows="3"
+                          required
+                          placeholder="Co chcesz mi powiedzieć?"></textarea>
+              </div>
+  
+              <!-- submit and reset -->
+              <div class="form-group btns-wrap-mobile-even mb-0">
+                <button type="submit" class="btn btn-primary">Wyślij</button>
+                <button type="reset" class="btn btn-outline-secondary">Wyczyść</button>
+              </div>
+  
+            </form>
+          </div>
+  
+        </div><!-- /.row -->
+  
+      </div><!-- /.container -->
+    </section>
 
-            <!-- submit and reset -->
-            <div class="form-group btns-wrap-mobile-even mb-0">
-              <button type="submit" class="btn btn-primary">Wyślij</button>
-              <button type="reset" class="btn btn-outline-secondary">Wyczyść</button>
-            </div>
+  </div>
 
-          </form>
-        </div>
 
-      </div><!-- /.row -->
+  <!-- FOOTER -->
+  <footer class="main-footer">
+    <div class="container">
 
-    </div><!-- /.container -->
-  </section>
+      <img src="img/logo_small.png" class="footer-logo" alt="Bartłomiej Zając logo">
+      <p>&copy; Copyrights 2018<br>Bartłomiej Zając</p>
+
+    </div>
+  </footer>
   
 
 
