@@ -24,9 +24,16 @@
       navbar.addClass('sticked');
     }
   }
-  
 })();
 
+
+// PARALLAX BANNER
+(function() {
+  var nr = Math.floor(Math.random() * 8 + 1);  
+  $('.main-banner').parallax({
+    imageSrc: 'img/banner_bg' + nr + '.jpg'
+  });
+})();
 
 // SCROLL REVEAL SETUP
 (function() {
