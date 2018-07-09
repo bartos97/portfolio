@@ -2,6 +2,10 @@
   overflow: hidden;
 }
 
+.hide {
+  display: none !important;
+}
+
 .b-shadow-1 {
   @include mt_box_shadow(1);
 }

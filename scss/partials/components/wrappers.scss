@@ -17,8 +17,10 @@
 
   
   a {
-    color: $black;
     font-weight: $font-weight-base;
+    &:not(:hover) {
+      color: $black;
+    }
   }
 
   .fa, .fas, strong {
@@ -36,6 +38,7 @@
 
   .contact {
     line-height: 1;
+    color: $gray-600;
     // @include media-breakpoint-down(md) {
     //   text-align: center;
     // }
@@ -51,10 +54,12 @@
 
     .text-link {
       font-weight: $font-weight-light;
-      color: $gray-600;
       font-family: $font-family-alt;
       padding: 0.75rem 0;
       display: inline-block;
+      &:not(:hover) {
+        color: $gray-600;
+      }
     }
   }
 }

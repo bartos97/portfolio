@@ -97,7 +97,7 @@
 
   </header>
 
-  
+
   <div class="page-wrap"> 
   
     <!-- SECTION: about me -->
@@ -345,11 +345,23 @@
   
           <!-- contact form -->
           <div class="col-lg-7 col-xl-6">
-            <form class="form-default"
-                  action=""
-                  method="post"
+            <form class="form-default form-validate"
+                  action="ajax/contact_form.php"
+                  novalidate
                   id="contact-form" name="contact-form">
     
+              <!-- alert error -->              
+              <div class="alert alert-danger hide" id="contact-form-alert-error" aria-hidden="true">
+                <strong>Wystąpił błąd!</strong> 
+                <div class="alert-text">Twoja wiadomość nie została wysłana, spróbuj ponownie.</div>
+              </div>
+              
+              <!-- alert success -->              
+              <div class="alert alert-success hide" id="contact-form-alert-success" aria-hidden="true">
+                <strong>Sukces!</strong> 
+                <div class="alert-text">Twoja wiadomość została wysłana</div>
+              </div>
+              
               <!-- name -->
               <div class="form-group">
                 <label for="contact-form-name">Nazwa</label>
@@ -359,7 +371,8 @@
                         placeholder="np. Jan Kowalski"
                         required
                         minlength="2"
-                        maxlength="30">
+                        maxlength="50">
+                <div class="invalid-feedback">To pole jest wymagane. Nazwa powinna zawierać od 2 do 50 znaków</div>
               </div>
   
               <div class="form-row">
@@ -371,9 +384,9 @@
                          class="form-control"
                          placeholder="np. jan@kowalski.com"
                          required
-                         minlength="2"
-                         maxlength="30">
-                </div>
+                         minlength="2">
+                <div class="invalid-feedback">Proszę podać poprawny adres email</div>
+              </div>
   
                 <!-- tel -->
                 <div class="form-group col-md-6">
@@ -384,6 +397,7 @@
                          placeholder="np. 321645798"
                          minlength="7"
                          maxlength="15">
+                  <div class="invalid-feedback">Proszę podać poprawny numer telefonu</div>
                 </div>
               </div>
   
@@ -395,12 +409,18 @@
                           rows="3"
                           required
                           placeholder="Co chcesz mi powiedzieć?"></textarea>
+                <div class="invalid-feedback">To pole jest wymagane.</div>
               </div>
   
               <!-- submit and reset -->
               <div class="form-group btns-wrap-mobile-even mb-0">
                 <button type="submit" class="btn btn-primary">Wyślij</button>
                 <button type="reset" class="btn btn-outline-secondary">Wyczyść</button>
+              </div>
+
+              <!-- overlay -->
+              <div class="overlay hide" aria-hidden="true">
+                <img src="img/loader.svg" alt="Loading...">
               </div>
   
             </form>
@@ -431,7 +451,7 @@
   ================ -->
 
   <!-- Plugins -->
-  <script src="js/lib/jquery-3.3.1.slim.min.js"></script>
+  <script src="js/lib/jquery-3.3.1.min.js"></script>
   <script src="js/lib/bootstrap.bundle.min.js"></script>
   <script src="js/lib/parallax.min.js"></script>
   <script src="js/lib/scrollreveal.min.js"></script>
