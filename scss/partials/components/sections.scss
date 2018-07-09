@@ -1,5 +1,6 @@
 // Main page sections
 .page-section {
+  position: relative;
   padding: $spacer-4*3 0;
 
   &.has-shadow {
@@ -10,13 +11,25 @@
     background-color: $white;
   }
 
+  &.empty-bg {
+    &:before {
+      content: 'Więcej niebawem...';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 2rem;
+      font-family: $font-family-alt;
+      font-weight: $font-weight-bold;
+      color: $gray-300;
+    }
+  }
+
   .page-section-header {
     text-align: center;
     font-family: $font-family-alt;
     margin-bottom: $spacer-4*3;
     position: relative;
-    max-width: 33.75rem;
-    @include mx-auto;
     @include media-breakpoint-down(xs) {
       margin-bottom: $spacer-5;
     }
