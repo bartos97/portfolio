@@ -80,12 +80,12 @@
   <header class="main-banner" id="section-banner">
 
     <h1>
-      <div class="small">Witaj</div>
-      <div class="name">Jestem Bartek</div>
-      <div class="medium">Frontend Developer</div>
+      <div class="small enter-bottom-big-delay">Witaj</div>
+      <div class="name enter-bottom-big-delay">Jestem Bartek</div>
+      <div class="medium enter-bottom-big-delay">Frontend Developer</div>
     </h1>
 
-    <div class="icons-wrap">
+    <div class="icons-wrap enter-bottom-big-delay">
       <a class="icon-holder" href="https://github.com/bartos97" target="_blank">
         <i class="fab fa-github"></i>
       </a>
@@ -146,7 +146,9 @@
   
           <!-- divider -->
           <div class="image-divider">
-            <img src="img/content/me.jpg" alt="Moje zdjęcie">
+            <div class="img-wrap">
+              <img src="img/content/me.jpg" class="enter-bottom-close" alt="Moje zdjęcie">
+            </div>
           </div>
   
           <!-- progress bars -->
@@ -220,7 +222,7 @@
   
   
     <!-- SECTION: projects -->
-    <section class="page-section bg-alt empty-bg" id="section-project">
+    <section class="page-section bg-alt empty-bg overflow-hidden" id="section-project">
       <div class="container">
   
         <header class="page-section-header">
@@ -235,7 +237,7 @@
         <div class="row">
   
           <!-- card item -->
-          <div class="col-sm-6 col-lg-4 mb-gutter mb-lg-0">
+          <div class="col-sm-6 col-lg-4 mb-gutter mb-lg-0 enter-right-delay">
             <div class="card">
   
               <a href="http://bartlomiejzajac.pl/slowka/" target="_blank" class="card-img-top">
@@ -273,7 +275,7 @@
   
   
     <!-- SECTION: contact -->
-    <section class="page-section has-shadow" id="section-contact">
+    <section class="page-section has-shadow overflow-hidden" id="section-contact">
       <div class="container">
   
         <header class="page-section-header">
@@ -290,17 +292,17 @@
           <!-- contact informations -->
           <div class="col-lg-5 offset-xl-1 col-xl-4 d-flex flex-column justify-content-center">
             <div class="contact-details-big">
-              <div class="contact">
+              <div class="contact enter-left-delay">
                 <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                 <span class="sr-only">Lokalizacja:</span>
                 <span class="text-link">Kraków, Polska</span>
               </div>
-              <div class="contact">
+              <div class="contact enter-left-delay">
                 <i class="fas fa-phone-volume" aria-hidden="true"></i>
                 <span class="sr-only">Numer telefonu kontaktowego:</span>
                 <a href="tel:+48-511-952-318" class="text-link">511 952 318</a>
               </div>
-              <div class="contact">
+              <div class="contact enter-left-delay">
                 <i class="far fa-envelope" aria-hidden="true"></i>
                 <span class="sr-only">Kontaktowy adres e-mail:</span>
                 <a href="mailto:zajac.bartlomiej97@gmail.com" class="text-link">zajac.bartlomiej97@gmail.com</a>
@@ -328,7 +330,7 @@
               </div>
               
               <!-- name -->
-              <div class="form-group">
+              <div class="form-group enter-bottom-delay">
                 <label for="contact-form-name">Nazwa</label>
                 <input type="text"
                         name="contact-form-name" id="contact-form-name"
@@ -340,7 +342,7 @@
                 <div class="invalid-feedback">To pole jest wymagane. Nazwa powinna zawierać od 2 do 50 znaków</div>
               </div>
   
-              <div class="form-row">
+              <div class="form-row enter-bottom-delay">
                 <!-- email -->
                 <div class="form-group col-md-6">
                   <label for="contact-form-email">Adres email</label>
@@ -350,8 +352,8 @@
                          placeholder="np. jan@kowalski.com"
                          required
                          minlength="2">
-                <div class="invalid-feedback">Proszę podać poprawny adres email</div>
-              </div>
+                  <div class="invalid-feedback">Proszę podać poprawny adres email</div>
+                </div>
   
                 <!-- tel -->
                 <div class="form-group col-md-6">
@@ -367,7 +369,7 @@
               </div>
   
               <!-- message -->
-              <div class="form-group">
+              <div class="form-group enter-bottom-delay">
                 <label for="contact-form-msg">Wiadomość</label>
                 <textarea class="form-control"
                           name="contact-form-msg" id="contact-form-msg"
@@ -378,7 +380,7 @@
               </div>
   
               <!-- submit and reset -->
-              <div class="form-group btns-wrap-mobile-even mb-0">
+              <div class="form-group btns-wrap-mobile-even mb-0 enter-bottom-delay">
                 <button type="submit" class="btn btn-primary">Wyślij</button>
                 <button type="reset" class="btn btn-outline-secondary">Wyczyść</button>
               </div>

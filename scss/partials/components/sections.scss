@@ -105,12 +105,16 @@
       left: 0;
     }
     
-    img {
-      border-radius: 100%;
-      max-width: 100px;
-      border: 2px solid $border-color;
+    .img-wrap {
       position: relative;
+      display: inline-block;
+      max-width: 100px;
       // @include mt_box_shadow(2);
+      
+      img {
+        border-radius: 100%;
+        border: 2px solid $border-color;
+      }
     }
 
     @include media-breakpoint-up(md) {
@@ -129,7 +133,7 @@
         left: calc(50% - 1px);
       }
 
-      img {
+      .img-wrap {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);

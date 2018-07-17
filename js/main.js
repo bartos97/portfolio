@@ -29,28 +29,9 @@
 
 // PARALLAX BANNER
 (function() {
-  var nr = Math.floor(Math.random() * 8 + 1);  
+  var nr = Math.floor(Math.random() * 11 + 1);  
   $('.main-banner').parallax({
     imageSrc: 'img/banner_bg' + nr + '.jpg'
-  });
-})();
-
-// SCROLL REVEAL SETUP
-(function() {
-  window.sr = ScrollReveal({
-    mobile: false,
-    delay: 500,
-    duration: 1000
-  });
-
-  sr.reveal('.enter-left', {
-    origin: 'left',
-    distance: '50vw'
-  });
-
-  sr.reveal('.enter-right', {
-    origin: 'right',
-    distance: '50vw'
   });
 })();
 
@@ -97,9 +78,63 @@
           alertError.find('.alert-text').text(data.responseText);
       });
 
-      overlay.addClass('hide');
-      form.removeClass('was-validated')
+      window.setTimeout(function(){
+        overlay.addClass('hide');
+        form.removeClass('was-validated');
+      }, 1000);
     }
 
   });
+})();
+
+
+// SCROLL REVEAL SETUP
+(function() {
+  window.sr = ScrollReveal({
+    mobile: false,
+    delay: 500,
+    duration: 1000
+  });
+
+  sr.reveal('.enter-left', {
+    origin: 'left',
+    distance: '50vw'
+  });
+
+  sr.reveal('.enter-left-delay', {
+    origin: 'left',
+    distance: '50vw'
+  }, 100);
+
+  sr.reveal('.enter-right', {
+    origin: 'right',
+    distance: '50vw'
+  });
+
+  sr.reveal('.enter-right-delay', {
+    origin: 'right',
+    distance: '50vw'
+  }, 100);
+
+  sr.reveal('.enter-bottom', {
+    origin: 'bottom',
+    distance: '50vh'
+  });
+
+  sr.reveal('.enter-bottom-close', {
+    origin: 'bottom',
+    distance: '100%'
+  });
+
+  sr.reveal('.enter-bottom-delay', {
+    origin: 'bottom',
+    distance: '50vh'
+  }, 100);
+
+  sr.reveal('.enter-bottom-big-delay', {
+    origin: 'bottom',
+    distance: '50px',
+    duration: 2000,
+    easing: 'cubic-bezier(.06,.8,.88,.97)'
+  },1000);
 })();
