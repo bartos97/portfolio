@@ -3,6 +3,10 @@
   position: relative;
   padding: $spacer-4*3 0;
 
+  @include media-breakpoint-up(sm) {
+    padding: $spacer-4*4 0;
+  }
+
   &.has-shadow {
     @include mt_box_shadow(1);
   }

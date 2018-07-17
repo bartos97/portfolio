@@ -55,11 +55,9 @@
 
     <!-- menu -->
     <div class="collapse navbar-collapse" id="collapse-main-nav">
-      <ul class="navbar-nav m-auto mt-2 mt-lg-0">
+      <ul class="navbar-nav m-auto mt-2 mt-lg-0" id="main-nav">
         <li class="nav-item active">
-          <a class="nav-link text-link" href="#section-banner">
-            Start <span class="sr-only sr-active">(obecna strona)</span>
-          </a>
+          <a class="nav-link text-link" href="#section-banner" aria-describedby="current-page">Start</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-link" href="#section-about">O mnie</a>
@@ -71,6 +69,7 @@
           <a class="nav-link text-link" href="#section-contact">Kontakt</a>
         </li>
       </ul>
+      <div id="current-page" class="hide">obecna strona</div>
     </div>
 
   </nav>
@@ -138,8 +137,8 @@
               </div>
   
               <div class="mt-4 mb-2 btns-wrap-mobile-even">
-                <a href="#" class="btn btn-primary">Pobierz CV</a>
-                <a href="#" class="btn btn-primary">Wyślij wiadomość</a>
+                <a href="#" class="btn btn-primary btn-shadow">Pobierz CV</a>
+                <a href="#" class="btn btn-primary btn-shadow">Wyślij wiadomość</a>
               </div>
             </section>
           </div>
@@ -222,7 +221,7 @@
   
   
     <!-- SECTION: projects -->
-    <section class="page-section bg-alt empty-bg overflow-hidden" id="section-project">
+    <section class="page-section bg-alt empty-bg overflow-hidden" id="section-projects">
       <div class="container">
   
         <header class="page-section-header">
@@ -421,6 +420,7 @@
   <script src="js/lib/jquery-3.3.1.min.js"></script>
   <script src="js/lib/bootstrap.bundle.min.js"></script>
   <script src="js/lib/parallax.min.js"></script>
+  <script src="js/lib/jquery.nav.js"></script>
   <script src="js/lib/scrollreveal.min.js"></script>
 
   <!-- Page scripts -->

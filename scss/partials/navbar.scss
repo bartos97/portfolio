@@ -1,5 +1,8 @@
 .navbar {
-  transition-duration: 0.3s;
+  transition-duration: 0.3s;  
+  @include media-breakpoint-down(xs) {
+    background-color: rgba(0,0,0,0.75);
+  }
 
   .navbar-brand {
     @include media-breakpoint-down(xs) {
@@ -51,6 +54,9 @@
         transition-duration: 0.3s;
         text-transform: uppercase;
         letter-spacing: 2px;
+        @include media-breakpoint-down(xs) {
+          font-size: $font-size-sm;
+        }
         
         &:before {
           height: 2px;

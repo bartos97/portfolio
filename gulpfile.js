@@ -46,10 +46,10 @@ gulp.task('prefixCss', function() {
 gulp.task('browserSync', function() {
   browserSync.init({
     notify: false,
-    proxy: 'localhost/portfolio',
-    // server: {
-    //   baseDir: './'
-    // }
+    // proxy: 'localhost/portfolio',
+    server: {
+      baseDir: './'
+    }
   });
 });
 
