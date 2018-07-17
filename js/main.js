@@ -105,6 +105,32 @@
 })();
 
 
+// SCROLL TO 
+(function() {
+
+  $('.scroll-to').on('click', function(e) {
+    e.preventDefault();
+
+    var target;
+    if ($(this).attr('href'))
+      target = $($(this).attr('href'));
+    else if ($(this).attr('data-target'))
+      target = $($(this).attr('data-target'));
+    else return false;
+
+    if(target.length) {
+      var top = target.offset().top;
+      window.scrollTo({
+        top: top,
+        behavior: "smooth"
+      })
+    }
+    else return false; 
+  });
+
+})();
+
+
 // SCROLL REVEAL SETUP
 (function() {
 
