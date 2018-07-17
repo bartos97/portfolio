@@ -43,10 +43,11 @@
     // Set email data
     $recipient = "zajac.bartlomiej97@gmail.com";
     $subject = "Wiadomość z formularza kontaktowego";
-    $mailContent =  "Nazwa: $name \n";
-    $mailContent .= "E-mail: $mailSafe \n";
-    $mailContent .= "Telefon: $telSafe \n";
-    $mailContent .= "Wiadomość: \n$msg";
+    $subject = '=?UTF-8?B?' . base64_encode($subject) . '?=';
+    $mailContent =  "Nazwa: <strong>$name</strong><br>";
+    $mailContent .= "E-mail: <strong>$mailSafe</strong><br>";
+    $mailContent .= "Telefon: <strong>$telSafe</strong><br>";
+    $mailContent .= "Wiadomość: <br>$msg";
     $headers = 'Content-Type: text/html; charset=utf-8';
 
     // Send mail
