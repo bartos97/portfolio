@@ -63,6 +63,8 @@
 
 // Inner section: subsection inside main page sections
 .inner-section {
+  min-height: 100%;
+
   header h4 {
     font-family: $font-family-alt;
     margin-bottom: $spacer-4;
