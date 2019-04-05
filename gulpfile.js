@@ -1,77 +1,72 @@
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var sourcemaps = require('gulp-sourcemaps');
-var browserSync = require('browser-sync').create();
-var runSequence = require('run-sequence');
-var autoprefixer = require('gulp-autoprefixer');
-var wait = require('gulp-wait');
+const gulp =         require('gulp');
+const sass =         require('gulp-sass');
+const sourcemaps =   require('gulp-sourcemaps');
+const autoprefixer = require('gulp-autoprefixer');
+const wait =         require('gulp-wait');
+const watch =        require('gulp-watch');
+const terser =       require('gulp-terser');
+const concat =       require('gulp-concat');
+const browserSync =  require('browser-sync').create();
+
+const jsFiles = [
+    "js/lib/jquery-3.3.1.min.js",
+    "js/lib/bootstrap.bundle.min.js",
+    "js/lib/parallax.min.js",
+    "js/lib/jquery.nav.js",
+    "js/lib/scrollreveal.min.js",
+    "js/main.js"
+];
 
 
-// SASS task
-// compiles sass into css
-gulp.task('sass', function() {
+function startServer(callback) {
+    browserSync.init({
+      notify: false,
+      // proxy: 'localhost/portfolio',
+      server: {
+        baseDir: './'
+      }
+    });
+    callback();
+}
+
+
+function compileSass() {
   return gulp.src('scss/main.scss')
-  .pipe(wait(100)) // becouse VS Code was making some problems with compilation on save
-  .pipe(sourcemaps.init())
-  .pipe(sass({
-    outputStyle: 'compressed'
-  }).on('error', sass.logError))
-  .pipe(sourcemaps.write())
-  .pipe(gulp.dest('css/'))
-  .pipe(browserSync.reload({
-    stream: true
-  })) 
-});
-
-gulp.task('sassLite', function() {
-  return gulp.src('scss/main.scss')
-  .pipe(sass({
-    outputStyle: 'compressed'
-  }).on('error', sass.logError))
-  .pipe(gulp.dest('css/'))
-});
+    .pipe(wait(100)) // becouse VS Code was making some problems with compilation on save
+    .pipe(sourcemaps.init())
+    .pipe(sass({
+        outputStyle: 'compressed'
+    }).on('error', sass.logError))
+    .pipe(sourcemaps.write())
+    .pipe(autoprefixer({
+        browsers: [ "last 3 versions", "iOS > 7", "Safari > 5", "Explorer >= 11" ]
+    }))
+    .pipe(gulp.dest('css/'))
+    .pipe(browserSync.reload({
+        stream: true
+    }));
+}
 
 
-// prefixCss task
-gulp.task('prefixCss', function() {
-  return gulp.src('css/main.css')
-  .pipe(autoprefixer({
-    browsers: [ "last 3 versions", "iOS > 7", "Safari > 5", "Explorer >= 11" ]
-  }))
-  .pipe(gulp.dest('css'));
-});
+function compileJS(){
+    return gulp.src(jsFiles)
+        .pipe(terser())
+            .on('error', err => {
+                console.log(err);
+            })
+        .pipe(concat("main.min.js"))
+        .pipe(gulp.dest("js/build"));
+}
 
 
-// browserSync task
-gulp.task('browserSync', function() {
-  browserSync.init({
-    notify: false,
-    // proxy: 'localhost/portfolio',
-    server: {
-      baseDir: './'
-    }
-  });
-});
-
-
-// Watch task
-gulp.task('watch', function (){
-  gulp.watch(['*.html', 'js/*.js'], browserSync.reload);
-  gulp.watch('scss/**/*.scss', ['sass']);
-});
+function watchFiles(callback){
+  watch('*.html', browserSync.reload);
+  watch('js/*.js', gulp.series(compileJS, browserSync.reload));
+  watch('scss/**/*.scss', compileSass);
+  callback();
+}
 
 
 // Default task
-gulp.task('default', function (callback) {
-  runSequence(['browserSync', 'watch'],
-    callback
-  );
-});
-
-
-// Build CSS task
-gulp.task('build-css', function (callback) {
-  runSequence(['sassLite', 'prefixCss'],
-    callback
-  );
-});
+exports.default = gulp.series(startServer, watchFiles);
+exports.js = compileJS;
