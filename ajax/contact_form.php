@@ -2,7 +2,7 @@
   define('DEBUG', true);
   // define('DEBUG', false);
 
-  error_reporting(0);
+  if (!DEBUG) error_reporting(0);
   setlocale(LC_ALL, 'pl_PL', 'pl', 'Polish_Poland.28592');
 
   if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -23,10 +23,12 @@
     }
     
     $telUser = strip_tags(trim($_POST['contact-form-tel']));
+    $telLen = 0;
+    $telSafe = '';
     $telLen = strlen($telUser);
     if ($telLen > 0) {
       $telSafe = filter_var($telUser, FILTER_SANITIZE_NUMBER_INT);
-      if ( $telSafe != $telUser || $telLen > 15) {
+      if ( $telSafe != $telUser || $telLen > 15 || $telLen < 7) {
         $validationOK = false;
       }
     }
@@ -50,7 +52,7 @@
     $subject = '=?UTF-8?B?' . base64_encode($subject) . '?=';
     $mailContent =  "Nazwa: <strong>$name</strong><br>";
     $mailContent .= "E-mail: <strong>$mailSafe</strong><br>";
-    if ($telLen) $mailContent .= "Telefon: <strong>$telSafe</strong><br>";
+    $mailContent .= "Telefon: <strong>$telSafe</strong><br>";
     $mailContent .= "Wiadomość: <br>$msg";
     $headers = "From: $name <$mailSafe> \r\n";
     $headers .= "Content-Type: text/html; charset=utf-8 \r\n";

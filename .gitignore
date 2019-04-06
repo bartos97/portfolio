@@ -1,6 +1,7 @@
 # Custom
 node_modules/
 _BIN/
+img/content/cv.png
 
 # Windows image file caches
 Thumbs.db
