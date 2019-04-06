@@ -21,10 +21,10 @@ const jsFiles = [
 function startServer(callback) {
     browserSync.init({
       notify: false,
-      // proxy: 'localhost/portfolio',
-      server: {
-        baseDir: './'
-      }
+      proxy: 'localhost/portfolio',
+      // server: {
+      //   baseDir: './'
+      // }
     });
     callback();
 }
@@ -32,8 +32,8 @@ function startServer(callback) {
 
 function compileSass() {
   return gulp.src('scss/main.scss')
-    .pipe(wait(100)) // becouse VS Code was making some problems with compilation on save
-    .pipe(sourcemaps.init())
+    .pipe(wait(200)) // becouse VS Code was making some problems with compilation on save
+    // .pipe(sourcemaps.init())
     .pipe(sass({
         outputStyle: 'compressed'
     }).on('error', sass.logError))

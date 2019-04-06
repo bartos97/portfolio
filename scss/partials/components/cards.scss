@@ -2,6 +2,7 @@
 .card {
   @include mt_box_shadow(1);
   transition-duration: 0.3s;
+  height: 100%;
 
   &:hover {
     @include mt_box_shadow(3);
@@ -32,6 +33,23 @@
     .icons-wrap .icon-holder:not(:hover) {
       background-color: #000;
     } 
+
+    .badge {
+      position: absolute;
+      top: 40%;
+      right: -15.5%;
+      text-transform: uppercase;
+      font-weight: 300;
+      font-size: 90%;
+      padding: 0.5rem 0;
+      width: 79.497%;
+      background-color: rgba(41, 168, 79, 0.75);
+      transform: rotate(51deg);
+    }
+  }
+
+  .button-wrap {
+    flex-grow: initial;
   }
 
   .card-text {

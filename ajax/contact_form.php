@@ -1,4 +1,8 @@
 <?php
+  define('DEBUG', true);
+  // define('DEBUG', false);
+
+  error_reporting(0);
   setlocale(LC_ALL, 'pl_PL', 'pl', 'Polish_Poland.28592');
 
   if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -7,8 +11,8 @@
     $tmpLen = 0;
 
     $name = strip_tags(trim($_POST['contact-form-name']));
-    $tmpLen = strlen($name);
-    if ($tmpLen < 2 || $tmpLen > 50 || !preg_match('/[a-zA-Z0-9]+/', $name)) {
+    $nameLen = strlen($name);
+    if ($nameLen < 2 || $nameLen > 50 || !preg_match('/[a-zA-Z0-9]+/', $name)) {
       $validationOK = false;
     }      
     
@@ -18,11 +22,11 @@
       $validationOK = false;
     }
     
-    $tmpLen = strlen($telSafe);
-    if ($tmpLen > 0) {
-      $telUser = trim($_POST['contact-form-tel']);
+    $telUser = strip_tags(trim($_POST['contact-form-tel']));
+    $telLen = strlen($telUser);
+    if ($telLen > 0) {
       $telSafe = filter_var($telUser, FILTER_SANITIZE_NUMBER_INT);
-      if ( !filter_var($telSafe, FILTER_SANITIZE_NUMBER_INT) || $telSafe != $telUser || $tmpLen > 15) {
+      if ( $telSafe != $telUser || $telLen > 15) {
         $validationOK = false;
       }
     }
@@ -46,21 +50,20 @@
     $subject = '=?UTF-8?B?' . base64_encode($subject) . '?=';
     $mailContent =  "Nazwa: <strong>$name</strong><br>";
     $mailContent .= "E-mail: <strong>$mailSafe</strong><br>";
-    $mailContent .= "Telefon: <strong>$telSafe</strong><br>";
+    if ($telLen) $mailContent .= "Telefon: <strong>$telSafe</strong><br>";
     $mailContent .= "Wiadomość: <br>$msg";
-    $headers = 'Content-Type: text/html; charset=utf-8';
+    $headers = "From: $name <$mailSafe> \r\n";
+    $headers .= "Content-Type: text/html; charset=utf-8 \r\n";
 
     // Send mail
     if ( mail($recipient, $subject, $mailContent, $headers) ) {
       // set a 200 (okey) response code
       http_response_code(200);
-      echo "Twoja wiadomość została wysłana";
     }
     else {
       // set a 500 (internal server error) response code
       http_response_code(500);
-      echo "Twoja wiadomość nie została wysłana, spróbuj ponownie";
-      // echo "mail() error";
+      if(DEBUG) echo html_entity_decode(error_get_last()['message']);
     }
   }
 
@@ -68,7 +71,6 @@
   // Not POST request, set forbidden response (403)
   else {
     http_response_code(403);
-    // echo "Twoja wiadomość nie została wysłana spróbuj ponownie";
-    echo "Problem serwera";
+    if(DEBUG) echo html_entity_decode(error_get_last()['message']);
   }
 ?>

@@ -1,11 +1,5 @@
 .main-banner {
   min-height: 100vh;
-  // Used parallax.js instead:
-  // background-color: $gray-900;
-  // background-image: url('../../img/banner_bg3.jpg');
-  // background-size: cover;
-  // background-position: center center;
-  // background-repeat: no-repeat;
   color: $white;
   text-align: center;
   display: flex;
@@ -15,34 +9,55 @@
 
   // text
   h1 {
-    text-shadow: 2px 2px rgba(0,0,0,0.35);
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.35);
     font-family: $font-family-alt;
     line-height: 1.4;
     font-size: 2rem;
+    margin-top: auto;
+
     @include media-breakpoint-up(sm) {
-      font-size: 2.75rem;      
+      font-size: 2.75rem;
     }
 
     .small {
       text-transform: uppercase;
       font-weight: $font-weight-light;
     }
-    
+
     .name {
       font-weight: $font-weight-bold;
       font-size: 125%;
     }
 
     .medium {
-      font-size: 90%;
+      font-size: 75%;
+      font-weight: 400;
     }
   }
 
   .icons-wrap {
     margin-top: $spacer-2;
+
     .icon-holder {
-      box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.35);
+      box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.35);
     }
   }
 
+  .cta-see-more {
+    margin-top: auto;
+    padding: 2rem;
+    font-size: 2.5rem;
+    line-height: 1;
+    color: $gray-200;
+    opacity: 0.5;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.35);
+    
+    > .fa {
+      animation: cta-bounce 2s infinite cubic-bezier(0, 0, 0.175, 1);
+    }
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
 }
