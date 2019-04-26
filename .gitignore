@@ -2,6 +2,7 @@
 node_modules/
 _BIN/
 img/content/cv.png
+email_credentials*
 
 # Windows image file caches
 Thumbs.db

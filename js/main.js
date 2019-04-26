@@ -70,7 +70,7 @@
         alertError.removeClass('hide');
         alertError.attr('aria-hidden', false);
         if (data.responseText !== '')
-          alertError.find('.alert-text').text(data.responseText);
+          console.log(data.responseText);
       });
 
       window.setTimeout(function(){

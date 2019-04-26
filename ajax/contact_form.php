@@ -1,6 +1,13 @@
 <?php
-  define('DEBUG', true);
-  // define('DEBUG', false);
+  use PHPMailer\PHPMailer\PHPMailer;
+  use PHPMailer\PHPMailer\Exception;
+
+  require '../PHPMailer/src/Exception.php';
+  require '../PHPMailer/src/PHPMailer.php';
+  require '../PHPMailer/src/SMTP.php';
+  require 'email_credentials.php';
+
+  define('DEBUG', false);
 
   if (!DEBUG) error_reporting(0);
   setlocale(LC_ALL, 'pl_PL', 'pl', 'Polish_Poland.28592');
@@ -47,26 +54,71 @@
     }   
     
     // Set email data
-    $recipient = "zajac.bartlomiej97@gmail.com";
-    $subject = "Wiadomość z formularza kontaktowego";
-    $subject = '=?UTF-8?B?' . base64_encode($subject) . '?=';
-    $mailContent =  "Nazwa: <strong>$name</strong><br>";
-    $mailContent .= "E-mail: <strong>$mailSafe</strong><br>";
-    $mailContent .= "Telefon: <strong>$telSafe</strong><br>";
-    $mailContent .= "Wiadomość: <br>$msg";
-    $headers = "From: $name <$mailSafe> \r\n";
-    $headers .= "Content-Type: text/html; charset=utf-8 \r\n";
+    $mail = new PHPMailer(true);
 
-    // Send mail
-    if ( mail($recipient, $subject, $mailContent, $headers) ) {
+    try {
+      $mail->CharSet = 'UTF-8';
+
+      //Server settings
+      $mail->isSMTP();                      
+      if(DEBUG) $mail->SMTPDebug = 2;       
+      $mail->Host       = EMAIL_HOST;       
+      $mail->SMTPAuth   = true;             
+      $mail->Username   = EMAIL_USERNAME;   
+      $mail->Password   = EMAIL_PASSWORD;   
+      $mail->SMTPSecure = EMAIL_SECURE_TYPE;
+      $mail->Port       = EMAIL_PORT;       
+  
+      //Recipients
+      $mail->setFrom($mailSafe, $name);
+      $mail->addAddress(EMAIL_USERNAME);    
+  
+      // Content
+      $mailContent =  "Nazwa: <strong>$name</strong><br>";
+      $mailContent .= "E-mail: <strong>$mailSafe</strong><br>";
+      $mailContent .= "Telefon: <strong>$telSafe</strong><br>";
+      $mailContent .= "Wiadomość: <br>$msg";
+
+      $mail->isHTML(true);                                  
+      $mail->Subject = 'Portfolio - Wiadomość z formularza kontaktowego';
+      $mail->Body    = $mailContent;
+      $mail->AltBody = $mailContent;
+  
+      $mail->send();
+
       // set a 200 (okey) response code
       http_response_code(200);
     }
-    else {
+    catch (Exception $e) {
       // set a 500 (internal server error) response code
       http_response_code(500);
-      if(DEBUG) echo html_entity_decode(error_get_last()['message']);
+
+      if(DEBUG) {
+        echo html_entity_decode(error_get_last()['message']);
+        echo "Mailer Error: {$mail->ErrorInfo}";
+      }
     }
+
+    // $recipient = "zajac.bartlomiej97@gmail.com";
+    // $subject = "Wiadomość z formularza kontaktowego";
+    // // $subject = '=?UTF-8?B?' . base64_encode($subject) . '?=';
+    // $mailContent =  "Nazwa: <strong>$name</strong><br>";
+    // $mailContent .= "E-mail: <strong>$mailSafe</strong><br>";
+    // $mailContent .= "Telefon: <strong>$telSafe</strong><br>";
+    // $mailContent .= "Wiadomość: <br>$msg";
+    // // $headers = "From: $name <$mailSafe> \r\n";
+    // // $headers .= "Content-Type: text/html; charset=utf-8 \r\n";
+
+    // // Send mail
+    // if ( mail($recipient, $subject, $mailContent, $headers) ) {
+    //   // set a 200 (okey) response code
+    //   http_response_code(200);
+    // }
+    // else {
+    //   // set a 500 (internal server error) response code
+    //   http_response_code(500);
+    //   if(DEBUG) echo html_entity_decode(error_get_last()['message']);
+    // }
   }
 
 
