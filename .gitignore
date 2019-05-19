@@ -1,7 +1,7 @@
 # Custom
 node_modules/
 _BIN/
-img/content/cv.png
+img/content/*
 email_credentials*
 
 # Windows image file caches
