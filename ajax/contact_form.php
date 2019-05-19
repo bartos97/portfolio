@@ -69,8 +69,11 @@
       $mail->SMTPSecure = EMAIL_SECURE_TYPE;
       $mail->Port       = EMAIL_PORT;       
   
-      //Recipients
-      $mail->setFrom($mailSafe, $name);
+      //Sender
+      $mail->setFrom(EMAIL_USERNAME);
+      $mail->addReplyTo($mailSafe, $name);
+      
+      //Recipient
       $mail->addAddress(EMAIL_USERNAME);    
   
       // Content
